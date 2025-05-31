@@ -7,19 +7,21 @@ import java.util.Scanner;
 public class Conta {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        dividir(12, 0);
 
-        int numero1 = sc.nextInt();
-        int numero2 = sc.nextInt();
-        int media;
+    }
+
+    public static int dividir(int a, int b) {
+
 
         try {
-            media = numero1 / numero2;
-        } catch (DivisaoPorZero e) {
-            System.out.println(e.getMessage());
+            System.out.println("a / b = " + a / b);
+            return a / b;
 
+        } catch (ArithmeticException e) {
+            System.out.println("Erro: Divisão por zero não é permitida");
+            return 0;
         }
-
-        System.out.println("Executou corretamente");
     }
+
 }
